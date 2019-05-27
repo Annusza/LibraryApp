@@ -1,0 +1,14 @@
+E:\RiderProject\Library\Library.Specs\bin\Debug\netcoreapp2.2\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+E:\RiderProject\Library\Library.Specs\bin\Debug\netcoreapp2.2\xunit.runner.reporters.netcoreapp10.dll
+E:\RiderProject\Library\Library.Specs\bin\Debug\netcoreapp2.2\xunit.runner.utility.netcoreapp10.dll
+E:\RiderProject\Library\Library.Specs\bin\Debug\netcoreapp2.2\Library.Specs.deps.json
+E:\RiderProject\Library\Library.Specs\bin\Debug\netcoreapp2.2\Library.Specs.runtimeconfig.json
+E:\RiderProject\Library\Library.Specs\bin\Debug\netcoreapp2.2\Library.Specs.runtimeconfig.dev.json
+E:\RiderProject\Library\Library.Specs\bin\Debug\netcoreapp2.2\Library.Specs.dll
+E:\RiderProject\Library\Library.Specs\bin\Debug\netcoreapp2.2\Library.Specs.pdb
+E:\RiderProject\Library\Library.Specs\obj\Debug\netcoreapp2.2\Library.Specs.csprojAssemblyReference.cache
+E:\RiderProject\Library\Library.Specs\obj\Debug\netcoreapp2.2\Library.Specs.csproj.CoreCompileInputs.cache
+E:\RiderProject\Library\Library.Specs\obj\Debug\netcoreapp2.2\Library.Specs.AssemblyInfoInputs.cache
+E:\RiderProject\Library\Library.Specs\obj\Debug\netcoreapp2.2\Library.Specs.AssemblyInfo.cs
+E:\RiderProject\Library\Library.Specs\obj\Debug\netcoreapp2.2\Library.Specs.dll
+E:\RiderProject\Library\Library.Specs\obj\Debug\netcoreapp2.2\Library.Specs.pdb

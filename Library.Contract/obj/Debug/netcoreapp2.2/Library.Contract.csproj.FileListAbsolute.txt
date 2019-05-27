@@ -1,0 +1,9 @@
+E:\RiderProject\Library\Library.Contract\bin\Debug\netcoreapp2.2\Library.Contract.deps.json
+E:\RiderProject\Library\Library.Contract\bin\Debug\netcoreapp2.2\Library.Contract.dll
+E:\RiderProject\Library\Library.Contract\bin\Debug\netcoreapp2.2\Library.Contract.pdb
+E:\RiderProject\Library\Library.Contract\obj\Debug\netcoreapp2.2\Library.Contract.csprojAssemblyReference.cache
+E:\RiderProject\Library\Library.Contract\obj\Debug\netcoreapp2.2\Library.Contract.csproj.CoreCompileInputs.cache
+E:\RiderProject\Library\Library.Contract\obj\Debug\netcoreapp2.2\Library.Contract.AssemblyInfoInputs.cache
+E:\RiderProject\Library\Library.Contract\obj\Debug\netcoreapp2.2\Library.Contract.AssemblyInfo.cs
+E:\RiderProject\Library\Library.Contract\obj\Debug\netcoreapp2.2\Library.Contract.dll
+E:\RiderProject\Library\Library.Contract\obj\Debug\netcoreapp2.2\Library.Contract.pdb

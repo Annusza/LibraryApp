@@ -1,0 +1,14 @@
+E:\RiderProject\Library\Library.Core\bin\Debug\netcoreapp2.2\Library.Core.deps.json
+E:\RiderProject\Library\Library.Core\bin\Debug\netcoreapp2.2\Library.Core.dll
+E:\RiderProject\Library\Library.Core\bin\Debug\netcoreapp2.2\Library.Core.pdb
+E:\RiderProject\Library\Library.Core\bin\Debug\netcoreapp2.2\Library.Contract.dll
+E:\RiderProject\Library\Library.Core\bin\Debug\netcoreapp2.2\Library.Infrastructure.dll
+E:\RiderProject\Library\Library.Core\bin\Debug\netcoreapp2.2\Library.Contract.pdb
+E:\RiderProject\Library\Library.Core\bin\Debug\netcoreapp2.2\Library.Infrastructure.pdb
+E:\RiderProject\Library\Library.Core\obj\Debug\netcoreapp2.2\Library.Core.csprojAssemblyReference.cache
+E:\RiderProject\Library\Library.Core\obj\Debug\netcoreapp2.2\Library.Core.csproj.CoreCompileInputs.cache
+E:\RiderProject\Library\Library.Core\obj\Debug\netcoreapp2.2\Library.Core.AssemblyInfoInputs.cache
+E:\RiderProject\Library\Library.Core\obj\Debug\netcoreapp2.2\Library.Core.AssemblyInfo.cs
+E:\RiderProject\Library\Library.Core\obj\Debug\netcoreapp2.2\Library.Core.csproj.CopyComplete
+E:\RiderProject\Library\Library.Core\obj\Debug\netcoreapp2.2\Library.Core.dll
+E:\RiderProject\Library\Library.Core\obj\Debug\netcoreapp2.2\Library.Core.pdb

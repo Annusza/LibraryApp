@@ -1,0 +1,11 @@
+E:\RiderProject\Library\Library.Infrastructure\bin\Debug\netcoreapp2.2\Library.Infrastructure.deps.json
+E:\RiderProject\Library\Library.Infrastructure\bin\Debug\netcoreapp2.2\Library.Infrastructure.runtimeconfig.json
+E:\RiderProject\Library\Library.Infrastructure\bin\Debug\netcoreapp2.2\Library.Infrastructure.runtimeconfig.dev.json
+E:\RiderProject\Library\Library.Infrastructure\bin\Debug\netcoreapp2.2\Library.Infrastructure.dll
+E:\RiderProject\Library\Library.Infrastructure\bin\Debug\netcoreapp2.2\Library.Infrastructure.pdb
+E:\RiderProject\Library\Library.Infrastructure\obj\Debug\netcoreapp2.2\Library.Infrastructure.csprojAssemblyReference.cache
+E:\RiderProject\Library\Library.Infrastructure\obj\Debug\netcoreapp2.2\Library.Infrastructure.csproj.CoreCompileInputs.cache
+E:\RiderProject\Library\Library.Infrastructure\obj\Debug\netcoreapp2.2\Library.Infrastructure.AssemblyInfoInputs.cache
+E:\RiderProject\Library\Library.Infrastructure\obj\Debug\netcoreapp2.2\Library.Infrastructure.AssemblyInfo.cs
+E:\RiderProject\Library\Library.Infrastructure\obj\Debug\netcoreapp2.2\Library.Infrastructure.dll
+E:\RiderProject\Library\Library.Infrastructure\obj\Debug\netcoreapp2.2\Library.Infrastructure.pdb
