@@ -2,6 +2,7 @@ using System.Data.Common;
 using System.Reflection;
 using AutoMapper;
 using Library.Core.Services;
+using Library.Core.Services.Mappers;
 using Library.Infrastructure.Context;
 using Library.Infrastructure.Logic;
 using Microsoft.AspNetCore.Builder;
@@ -34,6 +35,9 @@ namespace Library
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddScoped<IBookRepository, BookRepository>();
             services.AddScoped<IBookService, BookService>();
+            
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserService, UserService>();
             
             
             
