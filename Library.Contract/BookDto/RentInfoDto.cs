@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Library.Infrastructure;
 
+
 namespace Library.Contract.BookDto
 {
     public class RentInfoDto

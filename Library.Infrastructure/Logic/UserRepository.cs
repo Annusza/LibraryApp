@@ -6,6 +6,7 @@ using Library.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 
 namespace Library.Infrastructure.Logic
+
 {
     public class UserRepository : IUserRepository
     {

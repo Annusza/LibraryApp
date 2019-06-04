@@ -1,4 +1,5 @@
 namespace Library.Contract.BookDto
+
 {
     public class UserDto
     {

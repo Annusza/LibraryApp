@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 
 namespace Library.Infrastructure.Model
+
 {
     public class RentInfo : Entity
     {

@@ -2,6 +2,7 @@ using Library.Contract.BookDto;
 using Library.Infrastructure;
 
 namespace Library.Core.Services.Mappers
+
 {
     internal static class BookMapper
     {

@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Library.Infrastructure.Model;
 
 namespace Library.Infrastructure.Logic
+
 {
     public interface IRentInfoRepository : IRepository<RentInfo>
     {

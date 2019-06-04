@@ -1,5 +1,3 @@
-using System;
-
 namespace Library.Contract.BookDto
 {
     public class BookDto

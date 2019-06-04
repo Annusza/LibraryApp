@@ -7,6 +7,7 @@ using Library.Infrastructure.Model;
 using Microsoft.EntityFrameworkCore;
 
 namespace Library.Infrastructure.Logic
+
 {
     public class RentInfoRepository : IRentInfoRepository
     {

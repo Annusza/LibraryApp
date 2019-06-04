@@ -1,5 +1,3 @@
-using System.Data.Common;
-using System.Reflection;
 using AutoMapper;
 using Library.Core.Services;
 using Library.Core.Services.Mappers;
@@ -7,7 +5,6 @@ using Library.Infrastructure.Context;
 using Library.Infrastructure.Logic;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;

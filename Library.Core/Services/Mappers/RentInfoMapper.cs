@@ -1,6 +1,7 @@
 using Library.Contract.BookDto;
 using Library.Infrastructure.Model;
 
+
 namespace Library.Core.Services.Mappers
 {
     internal static class RentInfoMapper

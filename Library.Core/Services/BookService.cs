@@ -3,9 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Library.Contract.BookDto;
 using Library.Core.Services.Mappers;
-using Library.Infrastructure;
 using Library.Infrastructure.Logic;
-using Library.Infrastructure.Model;
 
 namespace Library.Core.Services
 {
