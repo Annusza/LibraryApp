@@ -145,6 +145,8 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="BookDto" t="Include">
           <e p="BookDto.cs" t="Include" />
+          <e p="RentInfoDto.cs" t="Include" />
+          <e p="UserDto.cs" t="Include" />
         </e>
         <e p="Class1.cs" t="Include" />
         <e p="Library.Contract.csproj" t="IncludeRecursive" />
@@ -170,10 +172,16 @@
         <e p="Services" t="Include">
           <e p="BookService.cs" t="Include" />
           <e p="IBookService.cs" t="Include" />
+          <e p="IRentInfoService.cs" t="Include" />
           <e p="IService.cs" t="Include" />
+          <e p="IUserService.cs" t="Include" />
           <e p="Mappers" t="Include">
             <e p="BookMapper.cs" t="Include" />
+            <e p="RentInfoMapper.cs" t="Include" />
+            <e p="UserMapper.cs" t="Include" />
           </e>
+          <e p="RentInfoService.cs" t="Include" />
+          <e p="UserService.cs" t="Include" />
         </e>
       </e>
       <e p="Library.Infrastructure" t="IncludeRecursive">

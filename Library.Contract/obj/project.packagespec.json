@@ -14,7 +14,11 @@
     ],
     "frameworks": {
       "netcoreapp2.2": {
-        "projectReferences": {}
+        "projectReferences": {
+          "E:\\RiderProject\\Library\\Library.Infrastructure\\Library.Infrastructure.csproj": {
+            "projectPath": "E:\\RiderProject\\Library\\Library.Infrastructure\\Library.Infrastructure.csproj"
+          }
+        }
       }
     },
     "warningProperties": {

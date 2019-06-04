@@ -8,7 +8,7 @@ namespace Library.Core.Services
     {
         Task<IEnumerable<TEntity>> GetAll();
         Task<TEntity> GetById(long id);
-        Task Add(TEntity book);
+        Task Add(TEntity entity);
         Task Update(TEntity entity);
         Task Delete(long id);
     }

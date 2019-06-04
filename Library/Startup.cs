@@ -39,6 +39,8 @@ namespace Library
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserService, UserService>();
             
+            services.AddScoped<IRentInfoRepository, RentInfoRepository>();
+            services.AddScoped<IRentInfoService, RentInfoService>();
             
             
             services.AddDbContext<LibraryContext>(optionsAction: options =>
