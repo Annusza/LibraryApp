@@ -1,51 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cfe6c60e-b26d-4cd9-ac88-0b1f41ca1e22" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Library/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Library/.idea/contentModel.xml" afterDir="false" />
+    <list default="true" id="cfe6c60e-b26d-4cd9-ac88-0b1f41ca1e22" name="Default Changelist" comment="Changes">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Library/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Library/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Contract/BookDto/BookDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Contract/BookDto/BookDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Contract/BookDto/RentInfoDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Contract/BookDto/RentInfoDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Contract/BookDto/UserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Contract/BookDto/UserDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Contract/bin/Debug/netcoreapp2.2/Library.Contract.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Contract/bin/Debug/netcoreapp2.2/Library.Contract.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Contract/bin/Debug/netcoreapp2.2/Library.Contract.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Contract/bin/Debug/netcoreapp2.2/Library.Contract.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Contract/bin/Debug/netcoreapp2.2/Library.Contract.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Contract/bin/Debug/netcoreapp2.2/Library.Contract.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Contract/obj/Debug/netcoreapp2.2/Library.Contract.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Contract/obj/Debug/netcoreapp2.2/Library.Contract.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Contract/obj/Debug/netcoreapp2.2/Library.Contract.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Contract/obj/Debug/netcoreapp2.2/Library.Contract.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library.Contract/bin/Debug/netcoreapp2.2/Library.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Contract/bin/Debug/netcoreapp2.2/Library.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library.Contract/bin/Debug/netcoreapp2.2/Library.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Contract/bin/Debug/netcoreapp2.2/Library.Infrastructure.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library.Contract/obj/Debug/netcoreapp2.2/Library.Contract.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Contract/obj/Debug/netcoreapp2.2/Library.Contract.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Contract/obj/Debug/netcoreapp2.2/Library.Contract.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Contract/obj/Debug/netcoreapp2.2/Library.Contract.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Contract/obj/Debug/netcoreapp2.2/Library.Contract.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Contract/obj/Debug/netcoreapp2.2/Library.Contract.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Core/Services/BookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Core/Services/BookService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Core/Services/Mappers/BookMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Core/Services/Mappers/BookMapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Core/Services/Mappers/RentInfoMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Core/Services/Mappers/RentInfoMapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Core/Services/Mappers/UserMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Core/Services/Mappers/UserMapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Core/Services/RentInfoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Core/Services/RentInfoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Core/Services/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Core/Services/UserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Core/bin/Debug/netcoreapp2.2/Library.Contract.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Core/bin/Debug/netcoreapp2.2/Library.Contract.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Core/bin/Debug/netcoreapp2.2/Library.Contract.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Core/bin/Debug/netcoreapp2.2/Library.Contract.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Core/bin/Debug/netcoreapp2.2/Library.Core.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Core/bin/Debug/netcoreapp2.2/Library.Core.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Core/bin/Debug/netcoreapp2.2/Library.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Core/bin/Debug/netcoreapp2.2/Library.Core.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Core/bin/Debug/netcoreapp2.2/Library.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Core/bin/Debug/netcoreapp2.2/Library.Core.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library.Core/bin/Debug/netcoreapp2.2/Library.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Core/bin/Debug/netcoreapp2.2/Library.Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library.Core/bin/Debug/netcoreapp2.2/Library.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Core/bin/Debug/netcoreapp2.2/Library.Infrastructure.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Core/obj/Debug/netcoreapp2.2/Library.Core.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Core/obj/Debug/netcoreapp2.2/Library.Core.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library.Core/obj/Debug/netcoreapp2.2/Library.Core.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Core/obj/Debug/netcoreapp2.2/Library.Core.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Core/obj/Debug/netcoreapp2.2/Library.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Core/obj/Debug/netcoreapp2.2/Library.Core.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Core/obj/Debug/netcoreapp2.2/Library.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Core/obj/Debug/netcoreapp2.2/Library.Core.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Infrastructure/Library.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Infrastructure/Library.Infrastructure.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Infrastructure/Logic/BookRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Infrastructure/Logic/BookRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Infrastructure/Logic/RentInfoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Infrastructure/Logic/RentInfoRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Infrastructure/Migrations/20190517212751_init.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Infrastructure/Migrations/20190517212751_init.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Infrastructure/Migrations/LibraryContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Infrastructure/Model/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Infrastructure/Model/Entity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Infrastructure/Model/RentInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Infrastructure/Model/RentInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library.Infrastructure/bin/Debug/netcoreapp2.2/Library.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Infrastructure/bin/Debug/netcoreapp2.2/Library.Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library.Infrastructure/bin/Debug/netcoreapp2.2/Library.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Infrastructure/bin/Debug/netcoreapp2.2/Library.Infrastructure.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library.Infrastructure/obj/Debug/netcoreapp2.2/Library.Infrastructure.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Infrastructure/obj/Debug/netcoreapp2.2/Library.Infrastructure.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library.Infrastructure/obj/Debug/netcoreapp2.2/Library.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Infrastructure/obj/Debug/netcoreapp2.2/Library.Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library.Infrastructure/obj/Debug/netcoreapp2.2/Library.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Infrastructure/obj/Debug/netcoreapp2.2/Library.Infrastructure.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Library.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Library/Library.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/dbo.Library.db" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -247,8 +216,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Library.Infrastructure/Context/LibraryContext.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="30" column="68" lean-forward="true" selection-start-line="30" selection-start-column="68" selection-end-line="30" selection-end-column="68" />
+            <state relative-caret-position="330">
+              <caret line="23" column="51" lean-forward="true" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
               <folding>
                 <marker date="1559675107339" expanded="false" signature="6:72" ph="..." />
                 <marker date="1559675107339" expanded="true" signature="115:1310" ph="{...}" />
@@ -266,6 +235,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="A" />
         <option value="Annusza" />
       </list>
     </option>
@@ -375,6 +345,12 @@
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
               <item name="Library" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Library" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Library" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Library" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="ClientApp" type="24d0babc:SolutionExplorerModelNode" />
             </path>
             <path>
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
@@ -508,7 +484,7 @@
       <workItem from="1559667987854" duration="9300000" />
       <workItem from="1559694417133" duration="212000" />
       <workItem from="1559694685289" duration="161000" />
-      <workItem from="1559747653603" duration="12598000" />
+      <workItem from="1559747653603" duration="13358000" />
     </task>
     <task id="LOCAL-00001" summary="UserDto">
       <created>1559406805721</created>
@@ -531,11 +507,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559675171235</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Changes">
+      <created>1559763765594</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1559763765594</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65405000" />
+    <option name="totallyTimeSpent" value="66165000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -548,6 +531,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1359275" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -588,7 +572,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="UserDto" />
     <MESSAGE value="Data Transfer Object" />
-    <option name="LAST_COMMIT_MESSAGE" value="Data Transfer Object" />
+    <MESSAGE value="Changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1097,8 +1082,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Library.Infrastructure/Context/LibraryContext.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="30" column="68" lean-forward="true" selection-start-line="30" selection-start-column="68" selection-end-line="30" selection-end-column="68" />
+        <state relative-caret-position="330">
+          <caret line="23" column="51" lean-forward="true" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
           <folding>
             <marker date="1559675107339" expanded="false" signature="6:72" ph="..." />
             <marker date="1559675107339" expanded="true" signature="115:1310" ph="{...}" />
