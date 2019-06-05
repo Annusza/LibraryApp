@@ -11,7 +11,9 @@ namespace Library.Core.Services.Mappers
             return new UserDto()
             {
                 Name = user.Name,
-                Surname = user.Surname
+                Surname = user.Surname,
+                Id = user.Id
+                
             };
         }
 
@@ -20,7 +22,9 @@ namespace Library.Core.Services.Mappers
             return new User()
             {
                 Name = user.Name,
-                Surname = user.Surname
+                Surname = user.Surname,
+                Id = user.Id
+                
             };
         }
     }
