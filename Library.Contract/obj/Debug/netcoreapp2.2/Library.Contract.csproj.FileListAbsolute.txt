@@ -7,3 +7,6 @@ E:\RiderProject\Library\Library.Contract\obj\Debug\netcoreapp2.2\Library.Contrac
 E:\RiderProject\Library\Library.Contract\obj\Debug\netcoreapp2.2\Library.Contract.AssemblyInfo.cs
 E:\RiderProject\Library\Library.Contract\obj\Debug\netcoreapp2.2\Library.Contract.dll
 E:\RiderProject\Library\Library.Contract\obj\Debug\netcoreapp2.2\Library.Contract.pdb
+E:\RiderProject\Library\Library.Contract\bin\Debug\netcoreapp2.2\Library.Infrastructure.dll
+E:\RiderProject\Library\Library.Contract\bin\Debug\netcoreapp2.2\Library.Infrastructure.pdb
+E:\RiderProject\Library\Library.Contract\obj\Debug\netcoreapp2.2\Library.Contract.csproj.CopyComplete

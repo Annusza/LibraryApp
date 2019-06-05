@@ -6,26 +6,35 @@ namespace Library.Core.Services.Mappers
 {
     internal static class RentInfoMapper
     {
-        public static RentInfoDto MapDtoToRentInfo(RentInfo rentInfo)
+        public static RentInfoDto MapRentInfoToRentInfoDto(RentInfo rentInfo)
+        
         {
             return new RentInfoDto()
             {
                 DateFrom = rentInfo.DateFrom,
                 DateTo = rentInfo.DateTo,
-                RentedBook = rentInfo.RentedBook,
-                BorrowingUser = rentInfo.BorrowingUser
+                
+                //RentedBook = BookMapper.MapBookDtoToBook((BookDto) rentInfo.RentedBook);
+                RentedBook =BookMapper.MapBookToBookDto(rentInfo.RentedBook),
+               //BorrowingUser = rentInfo.BorrowingUser
+               BorrowingUser = UserMapper.MapUserToUserDto(rentInfo.BorrowingUser),
+               Id = rentInfo.Id
             };
         }
 
-        public static RentInfo MapRentInfoToDto(RentInfoDto rentInfo)
+        public static RentInfo MapRentInfoDtoToRentInfo(RentInfoDto rentInfo)
         {
             return new RentInfo()
             {
                 DateFrom = rentInfo.DateFrom,
                 DateTo = rentInfo.DateTo,
+                Id = rentInfo.Id
+                /*
                 RentedBook = rentInfo.RentedBook,
-                BorrowingUser = rentInfo.BorrowingUser
+                BorrowingUser = rentInfo.BorrowingUser*/
             };
         }
+        
+        
     }
 }

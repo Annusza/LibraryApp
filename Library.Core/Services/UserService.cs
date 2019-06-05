@@ -23,24 +23,24 @@ namespace Library.Core.Services
         {
             var users = await _iUserRepository.GetAll();
             return users
-                .Select(UserMapper.MapDtoToUser)
+                .Select(UserMapper.MapUserToUserDto)
                 .ToList();
         }
 
         public async Task<UserDto> GetById(long id)
         {
             var user = await _iUserRepository.GetById(id);
-            return UserMapper.MapDtoToUser(user);
+            return UserMapper.MapUserToUserDto(user);
         }
 
         public async Task Add(UserDto user)
         {
-            await _iUserRepository.Add(UserMapper.MapUserToDto(user));
+            await _iUserRepository.Add(UserMapper.MapUserDtoToUser(user));
         }
 
         public async Task Update(UserDto entity)
         {
-            await _iUserRepository.Update(UserMapper.MapUserToDto(entity));
+            await _iUserRepository.Update(UserMapper.MapUserDtoToUser(entity));
         }
 
         public async Task Delete(long id)

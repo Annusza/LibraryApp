@@ -31,7 +31,15 @@ namespace Library.Infrastructure.Logic
             var book = await _libraryContext.Book
                 .Where(x => x.Id == id)
                 .SingleOrDefaultAsync();
-            await _libraryContext.Entry(book).Reference(propertyExpression: x => x.RentInfos).LoadAsync();
+            try
+            {
+                await _libraryContext.Entry(book).Reference(propertyExpression: x => x.RentInfos).LoadAsync();
+            }
+            catch (ArgumentException e)
+            {
+                return null;
+            }
+            
             return book;
         }
 

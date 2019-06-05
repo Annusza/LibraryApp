@@ -1,7 +1,7 @@
 namespace Library.Contract.BookDto
 
 {
-    public class UserDto
+    public class UserDto : BaseDto
     {
         public string Name { get; set; }
 

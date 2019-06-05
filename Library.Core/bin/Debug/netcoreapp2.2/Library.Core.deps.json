@@ -725,6 +725,9 @@
         }
       },
       "Library.Contract/1.0.0": {
+        "dependencies": {
+          "Library.Infrastructure": "1.0.0"
+        },
         "runtime": {
           "Library.Contract.dll": {}
         }

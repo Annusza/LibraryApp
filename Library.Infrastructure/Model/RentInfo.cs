@@ -10,8 +10,9 @@ namespace Library.Infrastructure.Model
         public DateTime DateFrom { get; set; }
         public DateTime DateTo { get; set; }
         
+       
         
-        public IEnumerable<Book> RentedBook { get; set; }
-        public IEnumerable<User> BorrowingUser { get; set; }
+        public Book RentedBook { get; set; }
+        public User BorrowingUser { get; set; }
     }
 }

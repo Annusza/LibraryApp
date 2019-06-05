@@ -10,7 +10,7 @@ namespace Library.Infrastructure
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         public DateTime DateOfCreation { get; set; }
 

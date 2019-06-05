@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Library.Infrastructure.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20190517212751_init")]
+    [Migration("20190605185945_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,7 +20,7 @@ namespace Library.Infrastructure.Migrations
 
             modelBuilder.Entity("Library.Infrastructure.Book", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<long?>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("AuthorName");
@@ -46,7 +46,7 @@ namespace Library.Infrastructure.Migrations
 
             modelBuilder.Entity("Library.Infrastructure.Model.RentInfo", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<long?>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<long?>("BookId");
@@ -80,7 +80,7 @@ namespace Library.Infrastructure.Migrations
 
             modelBuilder.Entity("Library.Infrastructure.User", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<long?>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("DateOfCreation");

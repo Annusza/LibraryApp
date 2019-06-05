@@ -22,24 +22,25 @@ namespace Library.Core.Services
         {
             var rentInfos = await _iRentInfoRepository.GetAll();
             return rentInfos
-                .Select(RentInfoMapper.MapDtoToRentInfo)
+                .Select(RentInfoMapper.MapRentInfoToRentInfoDto)
                 .ToList();
         }
 
         public async Task<RentInfoDto> GetById(long id)
         {
             var rentInfo = await _iRentInfoRepository.GetById(id);
-            return RentInfoMapper.MapDtoToRentInfo(rentInfo);
+            return RentInfoMapper.MapRentInfoToRentInfoDto(rentInfo);
         }
 
         public async Task Add(RentInfoDto rentInfo)
         {
-            await _iRentInfoRepository.Add(RentInfoMapper.MapRentInfoToDto(rentInfo));
+            
+            await _iRentInfoRepository.Add(RentInfoMapper.MapRentInfoDtoToRentInfo(rentInfo));
         }
 
         public async Task Update(RentInfoDto entity)
         {
-            await _iRentInfoRepository.Update(RentInfoMapper.MapRentInfoToDto(entity));
+            await _iRentInfoRepository.Update(RentInfoMapper.MapRentInfoDtoToRentInfo(entity));
         }
 
         public async Task Delete(long id)

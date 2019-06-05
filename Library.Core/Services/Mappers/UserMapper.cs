@@ -6,7 +6,7 @@ namespace Library.Core.Services.Mappers
 {
     internal static class UserMapper
     {
-        public static UserDto MapDtoToUser(User user)
+        public static UserDto MapUserToUserDto(User user)
         {
             return new UserDto()
             {
@@ -15,7 +15,7 @@ namespace Library.Core.Services.Mappers
             };
         }
 
-        public static User MapUserToDto(UserDto user)
+        public static User MapUserDtoToUser(UserDto user)
         {
             return new User()
             {

@@ -5,13 +5,13 @@ using Library.Infrastructure;
 
 namespace Library.Contract.BookDto
 {
-    public class RentInfoDto
+    public class RentInfoDto : BaseDto
     {
         public DateTime DateFrom { get; set; }
         public DateTime DateTo { get; set; }
         
         
-        public IEnumerable<Book> RentedBook { get; set; }
-        public IEnumerable<User> BorrowingUser { get; set; }
+        public BookDto RentedBook { get; set; }
+        public UserDto BorrowingUser { get; set; }
     }
 }

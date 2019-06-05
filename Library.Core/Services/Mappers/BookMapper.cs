@@ -6,7 +6,7 @@ namespace Library.Core.Services.Mappers
 {
     internal static class BookMapper
     {
-        public static BookDto MapDtoToBook(Book book)
+        public static BookDto MapBookToBookDto(Book book)
         {
             /*-------*/
             return new BookDto()
@@ -16,12 +16,22 @@ namespace Library.Core.Services.Mappers
                 AuthorSurname = book.AuthorSurname,
                 PublishingHouse = book.PublishingHouse,
                 NumberOfSites = book.NumberOfSites,
-                YearOfPublication = book.YearOfPublication
-                /*RENTiNFOS*/
+                YearOfPublication = book.YearOfPublication,
+                Id = book.Id
+             
+                
+        /*public DateTime DateFrom { get; set; }
+        public DateTime DateTo { get; set; }
+        
+        
+        public IEnumerable<Book> RentedBook { get; set; }
+        public IEnumerable<User> BorrowingUser { get; set; }
+                RENTiNFOS*/
             };
         }
 
-        public static Book MapBookToDto(BookDto book)
+        public static Book MapBookDtoToBook(BookDto book)
+        //
         {
             return new Book()
             {
@@ -29,8 +39,10 @@ namespace Library.Core.Services.Mappers
                 AuthorName = book.AuthorName,
                 AuthorSurname = book.AuthorSurname,
                 PublishingHouse = book.PublishingHouse,
-                NumberOfSites = book.NumberOfSites,
-                YearOfPublication = book.YearOfPublication
+                NumberOfSites = book.NumberOfSites.GetValueOrDefault(),
+                YearOfPublication = book.YearOfPublication.GetValueOrDefault(),
+                Id = book.Id.GetValueOrDefault()
+                
                 /*RENTINFOS*/
             };
         }

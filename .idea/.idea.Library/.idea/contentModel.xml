@@ -116,6 +116,7 @@
           <e p="tslint.json" t="Include" />
         </e>
         <e p="Controllers" t="Include">
+          <e p="BookController.cs" t="Include" />
           <e p="SampleDataController.cs" t="Include" />
         </e>
         <e p="dbo.Library.db" t="Include" />
@@ -144,6 +145,7 @@
       <e p="Library.Contract" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="BookDto" t="Include">
+          <e p="BaseDto.cs" t="Include" />
           <e p="BookDto.cs" t="Include" />
           <e p="RentInfoDto.cs" t="Include" />
           <e p="UserDto.cs" t="Include" />
@@ -200,8 +202,8 @@
           <e p="UserRepository.cs" t="Include" />
         </e>
         <e p="Migrations" t="Include">
-          <e p="20190517212751_init.cs" t="Include" />
-          <e p="20190517212751_init.Designer.cs" t="Include" />
+          <e p="20190605185945_init.cs" t="Include" />
+          <e p="20190605185945_init.Designer.cs" t="Include" />
           <e p="LibraryContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Model" t="Include">

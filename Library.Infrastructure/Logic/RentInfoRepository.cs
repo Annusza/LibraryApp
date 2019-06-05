@@ -68,22 +68,7 @@ namespace Library.Infrastructure.Logic
                 rentInfoToUpdate.DateOfUpdate = DateTime.Now;
                 
 
-                if (entity.RentedBook != null && rentInfoToUpdate.RentedBook != null)
-                {
-                    var rentInfosToUpdate = rentInfoToUpdate.RentedBook.ToList();
-                    foreach (var rentInfo in rentInfosToUpdate)
-                    {
-                        foreach (var entityRentInfo in entity.RentedBook)
-                        {
-                            if (rentInfo.Id == entityRentInfo.Id)
-                            {
-                                _libraryContext.Entry(rentInfosToUpdate).CurrentValues.SetValues(entity.RentedBook);
-                            }
-                        }
-                       
-                    }
-                  
-                }
+           
 
                 await _libraryContext.SaveChangesAsync();
             }
