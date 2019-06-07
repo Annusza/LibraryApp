@@ -30,8 +30,8 @@ namespace Library.Infrastructure.Context
             modelBuilder.Entity<RentInfo>()
                 .HasOne(navigationExpression: x => x.BorrowingUser);
 
-           // modelBuilder.Entity<Book>()
-             //   .HasMany(navigationExpression: x => x.RentInfos);
+            modelBuilder.Entity<Book>()
+                .HasMany(navigationExpression: x => x.RentInfos);
          //       .OnDelete(DeleteBehavior.Cascade);
 
          modelBuilder.Entity<User>()

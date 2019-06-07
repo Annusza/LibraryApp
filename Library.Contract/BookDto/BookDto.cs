@@ -14,6 +14,7 @@ namespace Library.Contract.BookDto
         public int? NumberOfSites { get; set; }
         public string PublishingHouse { get; set; }
         
+        
        
         
         

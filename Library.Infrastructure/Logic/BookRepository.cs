@@ -21,7 +21,7 @@ namespace Library.Infrastructure.Logic
         {
          
             var books = await _libraryContext.Book.ToListAsync();
-            books.ForEach(action: x => { _libraryContext.Entry(x).Reference(propertyExpression: y => y.RentInfos).LoadAsync();});
+            //books.ForEach(action: x => { _libraryContext.Entry(x).Reference(propertyExpression: y => y.RentInfos).LoadAsync();});
             return books;
         }
 
@@ -31,14 +31,14 @@ namespace Library.Infrastructure.Logic
             var book = await _libraryContext.Book
                 .Where(x => x.Id == id)
                 .SingleOrDefaultAsync();
-            try
+           /* try
             {
                 await _libraryContext.Entry(book).Reference(propertyExpression: x => x.RentInfos).LoadAsync();
             }
             catch (ArgumentException e)
             {
                 return null;
-            }
+            }*/
             
             return book;
         }
