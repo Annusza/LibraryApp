@@ -46,11 +46,12 @@ namespace Library.Infrastructure.Logic
         public async Task Add(Book book)
         {
             book.DateOfCreation = DateTime.Now;
-            await _libraryContext.Book
+           /* await _libraryContext.Book
               
                 .Include(navigationPropertyPath: x=>x.RentInfos)
-            
-                .FirstAsync();
+
+                .FirstAsync();*/
+           book.Id = null;
             await _libraryContext.Book.AddAsync(book);
             await _libraryContext.SaveChangesAsync();
         }
@@ -59,8 +60,8 @@ namespace Library.Infrastructure.Logic
         {
             var bookToUpdate = await _libraryContext.Book
                     
-               // CZY TYLKO OBIEKTOWE CZY WSZYSTKIE POLA???
-                .Include(navigationPropertyPath:x=>x.RentInfos)
+               
+                //.Include(navigationPropertyPath:x=>x.RentInfos)
                 .SingleOrDefaultAsync(predicate: x => x.Id == entity.Id);
 
             if (bookToUpdate != null)
@@ -72,9 +73,11 @@ namespace Library.Infrastructure.Logic
                 bookToUpdate.YearOfPublication = entity.YearOfPublication;
                 bookToUpdate.NumberOfSites = entity.NumberOfSites;
                 bookToUpdate.DateOfUpdate = DateTime.Now;
-                bookToUpdate.RentInfos = entity.RentInfos;
+                //706
+                //bookToUpdate.RentInfos = entity.RentInfos;
 
-                if (entity.RentInfos != null && bookToUpdate.RentInfos != null)
+                // 706
+               /* if (entity.RentInfos != null && bookToUpdate.RentInfos != null)
                 {
                     var rentInfosToUpdate = bookToUpdate.RentInfos.ToList();
                     foreach (var rentInfo in rentInfosToUpdate)
@@ -89,7 +92,7 @@ namespace Library.Infrastructure.Logic
                        
                     }
                   
-                }
+                }*/
 
                 await _libraryContext.SaveChangesAsync();
             }

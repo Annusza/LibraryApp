@@ -48,7 +48,7 @@ namespace Library.Controllers
             }
 
             await _bookService.Add(book);
-            return Created(uri: "Created new book", book);
+            return Created("Created new book", book);
         }
 
         [HttpPut("UpdateBook")]
@@ -61,6 +61,13 @@ namespace Library.Controllers
 
             await _bookService.Update(book);
             return Ok(value: $"Updated book with id = {book.Id}");
+        }
+
+        [HttpDelete("DeleteBook/{id}")]
+        public async Task<IActionResult> DeleteBook(long id)
+        {
+            await _bookService.Delete(id);
+            return Ok(value: $"Book with id = {id} deleted");
         }
     }
 }
