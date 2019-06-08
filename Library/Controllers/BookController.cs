@@ -11,20 +11,37 @@ namespace Library.Controllers
     public class BookController : ControllerBase
     {
 
-        private readonly IBookService _bookService;
+        private readonly IBookService _iBookService;
+        //private readonly BookService _bookService;
+        
 
-        public BookController(IBookService bookService)
+        public BookController(IBookService iBookService)
         {
-            _bookService = bookService;
+            _iBookService = iBookService;
+            //_bookService = bookService;
         }
-
+        //
+       /* [HttpGet("GetBook/{Title}")]
+        public async Task<IActionResult> GetBookByTitle(string title)
+        {
+            try
+            {
+                var book = await _bookService.GetByTitle(title);
+                return Ok(book);
+            }
+            catch (NullReferenceException e)
+            {
+                return NotFound(value: $"Not found book with title = {title}");
+            }
+        }
+        */
         /*----------------*/
         [HttpGet("GetBook/{Id}")]
         public async Task<IActionResult> GetBookById(long id)
         {
             try
             {
-                var book = await _bookService.GetById(id);
+                var book = await _iBookService.GetById(id);
                 return Ok(book);
             }
             catch (NullReferenceException e)
@@ -36,7 +53,7 @@ namespace Library.Controllers
         [HttpGet("GetAllBooks")]
         public async Task<IActionResult> GetAllBooks()
         {
-            var books = await _bookService.GetAll();
+            var books = await _iBookService.GetAll();
             return Ok(books);
         }
 
@@ -48,7 +65,7 @@ namespace Library.Controllers
                 return BadRequest();
             }
 
-            await _bookService.Add(book);
+            await _iBookService.Add(book);
             return Created("Created new book", book);
         }
 
@@ -60,14 +77,14 @@ namespace Library.Controllers
                 return BadRequest();
             }
 
-            await _bookService.Update(book);
+            await _iBookService.Update(book);
             return Ok(value: $"Updated book with id = {book.Id}");
         }
 
         [HttpDelete("DeleteBook/{id}")]
         public async Task<IActionResult> DeleteBook(long id)
         {
-            await _bookService.Delete(id);
+            await _iBookService.Delete(id);
             return Ok(value: $"Book with id = {id} deleted");
         }
     }

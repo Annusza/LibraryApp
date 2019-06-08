@@ -17,6 +17,7 @@ namespace Library.Infrastructure.Logic
             _libraryContext = libraryContext;
         }
         
+      
         public async Task<IEnumerable<Book>> GetAll()
         {
          
@@ -116,11 +117,21 @@ namespace Library.Infrastructure.Logic
             var book = await _libraryContext.Book
                 .Where(x => x.Title == title)
                 .SingleOrDefaultAsync();
-            await _libraryContext.Entry(book).Reference(propertyExpression: x => x.RentInfos).LoadAsync();
+            /* try
+             {
+                 await _libraryContext.Entry(book).Reference(propertyExpression: x => x.RentInfos).LoadAsync();
+             }
+             catch (ArgumentException e)
+             {
+                 return null;
+             }*/
+            
             return book;
         }
 
-        public async Task<Book> GetByAuthorName(string name)
+      
+
+       public async Task<Book> GetByAuthorName(string name)
         {
             var book = await _libraryContext.Book
                 .Where(x => x.AuthorName==name)
