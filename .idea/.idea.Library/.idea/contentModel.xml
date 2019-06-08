@@ -119,6 +119,7 @@
         <e p="Controllers" t="Include">
           <e p="BookController.cs" t="Include" />
           <e p="SampleDataController.cs" t="Include" />
+          <e p="UserController.cs" t="Include" />
         </e>
         <e p="dbo.Library.db" t="Include" />
         <e p="Library.csproj" t="IncludeRecursive" />

@@ -21,36 +21,42 @@ namespace Library.Infrastructure.Logic
         public async Task<IEnumerable<User>> GetAll()
         {
             var users = await _libraryContext.User.ToListAsync();
-            users.ForEach(action: x =>
-            {
-                _libraryContext.Entry(x).Reference(propertyExpression: y => y.RentInfos).LoadAsync();});
+            // users.ForEach(action: x => {_libraryContext.Entry(x).Reference(propertyExpression: y => y.RentInfos).LoadAsync();});
             return users;
         }
 
- 
-      public async Task<User> GetById(long id)
-      {
-          var user = await _libraryContext.User
-              .Where(x => x.Id == id)
-              .SingleOrDefaultAsync();
-          await _libraryContext.Entry(user).Reference(propertyExpression: x => x.RentInfos).LoadAsync();
-          return user;
-      }
+
+        public async Task<User> GetById(long id)
+        {
+            var user = await _libraryContext.User
+                .Where(x => x.Id == id)
+                .SingleOrDefaultAsync();
+            /* try
+              {
+                  await _libraryContext.Entry(user).Reference(propertyExpression: x => x.RentInfos).LoadAsync();
+              }
+              catch (ArgumentException e)
+              {
+                  return null;
+              }*/
+
+            return user;
+        }
 
         public async Task Add(User entity)
         {
             entity.DateOfCreation = DateTime.Now;
-            await _libraryContext.User
-                .Include(navigationPropertyPath: x=>x.RentInfos)
-                .FirstAsync();
+            /* await _libraryContext.User
+                 .Include(navigationPropertyPath: x=>x.RentInfos)
+                 .FirstAsync();*/
             await _libraryContext.User.AddAsync(entity);
             await _libraryContext.SaveChangesAsync();
         }
 
         public async Task Update(User entity)
         {
-             var userToUpdate = await _libraryContext.User
-                .Include(navigationPropertyPath:x=>x.RentInfos)
+            var userToUpdate = await _libraryContext.User
+                .Include(navigationPropertyPath: x => x.RentInfos)
                 .SingleOrDefaultAsync(predicate: x => x.Id == entity.Id);
 
             if (userToUpdate != null)
@@ -58,9 +64,10 @@ namespace Library.Infrastructure.Logic
                 userToUpdate.Name = entity.Name;
                 userToUpdate.Surname = entity.Surname;
                 userToUpdate.DateOfUpdate = DateTime.Now;
-                userToUpdate.RentInfos = entity.RentInfos;
+                //707
+                //userToUpdate.RentInfos = entity.RentInfos;
 
-                if (entity.RentInfos != null && userToUpdate.RentInfos != null)
+                /*if (entity.RentInfos != null && userToUpdate.RentInfos != null)
                 {
                     var rentInfosToUpdate = userToUpdate.RentInfos.ToList();
                     foreach (var rentInfo in rentInfosToUpdate)
@@ -75,11 +82,12 @@ namespace Library.Infrastructure.Logic
                        
                     }
                   
-                }
+                }*/
 
                 await _libraryContext.SaveChangesAsync();
             }
         }
+
 
         public async Task Delete(long id)
         {
@@ -94,7 +102,7 @@ namespace Library.Infrastructure.Logic
         public async Task<User> GetByUserName(string userName)
         {
             var user = await _libraryContext.User
-                .Where(x => x.Name==userName)
+                .Where(x => x.Name == userName)
                 .SingleOrDefaultAsync();
             await _libraryContext.Entry(user).Reference(propertyExpression: x => x.RentInfos).LoadAsync();
             return user;
@@ -103,7 +111,7 @@ namespace Library.Infrastructure.Logic
         public async Task<User> GetByUserSurmane(string userSurname)
         {
             var user = await _libraryContext.User
-                .Where(x => x.Surname==userSurname)
+                .Where(x => x.Surname == userSurname)
                 .SingleOrDefaultAsync();
             await _libraryContext.Entry(user).Reference(propertyExpression: x => x.RentInfos).LoadAsync();
             return user;

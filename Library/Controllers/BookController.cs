@@ -51,7 +51,7 @@ namespace Library.Controllers
             return Created("Created new book", book);
         }
 
-        [HttpPut("UpdateBook/{id}")]
+        [HttpPut("UpdateBook")]
         public async Task<IActionResult> UpdateBook([FromBody] BookDto book)
         {
             if (book == null)
