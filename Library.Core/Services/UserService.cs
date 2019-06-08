@@ -33,14 +33,14 @@ namespace Library.Core.Services
             return UserMapper.MapUserToUserDto(user);
         }
 
-        public async Task Add(UserDto user)
+        public async Task Add(UserDto dto)
         {
-            await _iUserRepository.Add(UserMapper.MapUserDtoToUser(user));
+            await _iUserRepository.Add(UserMapper.MapUserDtoToUser(dto));
         }
 
-        public async Task Update(UserDto entity)
+        public async Task Update(UserDto dto)
         {
-            await _iUserRepository.Update(UserMapper.MapUserDtoToUser(entity));
+            await _iUserRepository.Update(UserMapper.MapUserDtoToUser(dto));
         }
 
         public async Task Delete(long id)

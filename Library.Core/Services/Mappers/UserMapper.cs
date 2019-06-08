@@ -23,7 +23,7 @@ namespace Library.Core.Services.Mappers
             {
                 Name = user.Name,
                 Surname = user.Surname,
-                Id = user.Id
+                Id = user.Id.GetValueOrDefault()
                 
             };
         }

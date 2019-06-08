@@ -118,6 +118,7 @@
         </e>
         <e p="Controllers" t="Include">
           <e p="BookController.cs" t="Include" />
+          <e p="RentInfoController.cs" t="Include" />
           <e p="SampleDataController.cs" t="Include" />
           <e p="UserController.cs" t="Include" />
         </e>

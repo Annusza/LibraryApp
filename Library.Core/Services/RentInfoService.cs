@@ -3,7 +3,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Library.Contract.BookDto;
 using Library.Core.Services.Mappers;
+using Library.Infrastructure;
 using Library.Infrastructure.Logic;
+using Library.Infrastructure.Model;
 
 
 namespace Library.Core.Services
@@ -12,10 +14,16 @@ namespace Library.Core.Services
     public class RentInfoService : IRentInfoService
     {
         private readonly IRentInfoRepository _iRentInfoRepository;
+        private readonly IBookRepository _ibookRepository;
+        private readonly IUserRepository _iUserRepository;
+        
 
-        public RentInfoService(IRentInfoRepository iIRentInfoRepository)
+        public RentInfoService(IRentInfoRepository iIRentInfoRepository, IBookRepository iBookRepository, IUserRepository iUserRepository
+        )
         {
             _iRentInfoRepository = iIRentInfoRepository;
+            _ibookRepository = iBookRepository;
+            _iUserRepository = iUserRepository;
         }
 
         public async Task<IEnumerable<RentInfoDto>> GetAll()
@@ -29,18 +37,28 @@ namespace Library.Core.Services
         public async Task<RentInfoDto> GetById(long id)
         {
             var rentInfo = await _iRentInfoRepository.GetById(id);
+            
+            
             return RentInfoMapper.MapRentInfoToRentInfoDto(rentInfo);
         }
 
-        public async Task Add(RentInfoDto rentInfo)
+        public async Task Add(RentInfoDto dto)
         {
-            
-            await _iRentInfoRepository.Add(RentInfoMapper.MapRentInfoDtoToRentInfo(rentInfo));
+            RentInfo entity = RentInfoMapper.MapRentInfoDtoToRentInfo(dto);
+
+            entity.RentedBook = await _ibookRepository.GetById(dto.RentedBookId.GetValueOrDefault());
+            entity.BorrowingUser = await _iUserRepository.GetById(dto.BorrowingUserId.GetValueOrDefault());
+            await _iRentInfoRepository.Add(entity);
         }
 
-        public async Task Update(RentInfoDto entity)
+        public async Task Update(RentInfoDto dto)
         {
-            await _iRentInfoRepository.Update(RentInfoMapper.MapRentInfoDtoToRentInfo(entity));
+            RentInfo entity = RentInfoMapper.MapRentInfoDtoToRentInfo(dto);
+            
+            entity.RentedBook = await _ibookRepository.GetById(dto.RentedBookId.GetValueOrDefault());
+            entity.BorrowingUser = await _iUserRepository.GetById(dto.BorrowingUserId.GetValueOrDefault());
+            
+            await _iRentInfoRepository.Update(entity);
         }
 
         public async Task Delete(long id)

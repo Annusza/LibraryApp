@@ -49,6 +49,7 @@ namespace Library.Infrastructure.Logic
             /* await _libraryContext.User
                  .Include(navigationPropertyPath: x=>x.RentInfos)
                  .FirstAsync();*/
+            entity.Id = null;
             await _libraryContext.User.AddAsync(entity);
             await _libraryContext.SaveChangesAsync();
         }
@@ -88,6 +89,7 @@ namespace Library.Infrastructure.Logic
             }
         }
 
+       // public async Task<>
 
         public async Task Delete(long id)
         {
@@ -117,4 +119,6 @@ namespace Library.Infrastructure.Logic
             return user;
         }
     }
+    
+    
 }

@@ -31,14 +31,14 @@ namespace Library.Core.Services
             return BookMapper.MapBookToBookDto(book);
         }
 
-        public async Task Add(BookDto book)
+        public async Task Add(BookDto dto)
         {
-            await _iBookRepository.Add(BookMapper.MapBookDtoToBook(book));
+            await _iBookRepository.Add(BookMapper.MapBookDtoToBook(dto));
         }
 
-        public async Task Update(BookDto entity)
+        public async Task Update(BookDto dto)
         {
-            await _iBookRepository.Update(BookMapper.MapBookDtoToBook(entity));
+            await _iBookRepository.Update(BookMapper.MapBookDtoToBook(dto));
         }
 
         public async Task Delete(long id)

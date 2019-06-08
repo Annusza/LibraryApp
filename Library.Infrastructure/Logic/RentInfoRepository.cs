@@ -38,18 +38,28 @@ namespace Library.Infrastructure.Logic
             var rentInfo = await _libraryContext.RentInfo
                 .Where(x => x.Id == id)
                 .SingleOrDefaultAsync();
-            await _libraryContext.Entry(rentInfo).Reference(propertyExpression: x => x.RentedBook).LoadAsync();
-            await _libraryContext.Entry(rentInfo).Reference(propertyExpression: x => x.BorrowingUser).LoadAsync();
+
+            try
+            {
+                await _libraryContext.Entry(rentInfo).Reference(propertyExpression: x => x.RentedBook).LoadAsync();
+                await _libraryContext.Entry(rentInfo).Reference(propertyExpression: x => x.BorrowingUser).LoadAsync();
+            }
+            catch (ArgumentException e)
+            {
+                return null;
+            }
+           
             return rentInfo;
         }
 
         public async Task Add(RentInfo entity)
         {
             entity.DateOfCreation = DateTime.Now;
-            await _libraryContext.RentInfo
+            /*await _libraryContext.RentInfo
                 .Include(navigationPropertyPath: x=>x.RentedBook)
                 .Include(navigationPropertyPath:x=>x.BorrowingUser)
-                .FirstAsync();
+                .FirstAsync();*/
+            entity.Id = null;
             await _libraryContext.RentInfo.AddAsync(entity);
             await _libraryContext.SaveChangesAsync();
         }
@@ -66,6 +76,8 @@ namespace Library.Infrastructure.Logic
                 rentInfoToUpdate.DateFrom = entity.DateFrom;
                 rentInfoToUpdate.DateTo = entity.DateTo;
                 rentInfoToUpdate.DateOfUpdate = DateTime.Now;
+                rentInfoToUpdate.RentedBook = entity.RentedBook;
+                rentInfoToUpdate.BorrowingUser = entity.BorrowingUser;
                 
 
            

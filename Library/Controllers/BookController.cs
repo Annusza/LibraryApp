@@ -18,6 +18,7 @@ namespace Library.Controllers
             _bookService = bookService;
         }
 
+        /*----------------*/
         [HttpGet("GetBook/{Id}")]
         public async Task<IActionResult> GetBookById(long id)
         {
@@ -28,7 +29,7 @@ namespace Library.Controllers
             }
             catch (NullReferenceException e)
             {
-                return NotFound(value: $"Can't found book with id = {id}");
+                return NotFound(value: $"Not found book with id = {id}");
             }
         }
 
