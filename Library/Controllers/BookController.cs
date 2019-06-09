@@ -12,29 +12,17 @@ namespace Library.Controllers
     {
 
         private readonly IBookService _iBookService;
-        //private readonly BookService _bookService;
+     
         
 
         public BookController(IBookService iBookService)
         {
             _iBookService = iBookService;
-            //_bookService = bookService;
+            
         }
-        //
-       /* [HttpGet("GetBook/{Title}")]
-        public async Task<IActionResult> GetBookByTitle(string title)
-        {
-            try
-            {
-                var book = await _bookService.GetByTitle(title);
-                return Ok(book);
-            }
-            catch (NullReferenceException e)
-            {
-                return NotFound(value: $"Not found book with title = {title}");
-            }
-        }
-        */
+        
+    
+        
         /*----------------*/
         [HttpGet("GetBook/{Id}")]
         public async Task<IActionResult> GetBookById(long id)
@@ -86,6 +74,34 @@ namespace Library.Controllers
         {
             await _iBookService.Delete(id);
             return Ok(value: $"Book with id = {id} deleted");
+        }
+        
+        [HttpGet("GetByTitle/{title}")]
+        public async Task<IActionResult> GetBookByTitle(string title)
+        {
+            try
+            {
+                var book = await _iBookService.GetByTitle(title);
+                return Ok(book);
+            }
+            catch (NullReferenceException e)
+            {
+                return NotFound(value: $"Not found book with title = {title}");
+            }
+        }
+        
+        [HttpGet("GetByAuthorSurname/{authorSurname}")]
+        public async Task<IActionResult> GetBookByAuthorSurname(string authorSurname)
+        {
+            try
+            {
+                var book = await _iBookService.GetByAuthorSurname(authorSurname);
+                return Ok(book);
+            }
+            catch (NullReferenceException e)
+            {
+                return NotFound(value: $"Not found book with title = {authorSurname}");
+            }
         }
     }
 }

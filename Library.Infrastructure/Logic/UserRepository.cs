@@ -101,14 +101,6 @@ namespace Library.Infrastructure.Logic
             }
         }
 
-        public async Task<User> GetByUserName(string userName)
-        {
-            var user = await _libraryContext.User
-                .Where(x => x.Name == userName)
-                .SingleOrDefaultAsync();
-            await _libraryContext.Entry(user).Reference(propertyExpression: x => x.RentInfos).LoadAsync();
-            return user;
-        }
 
         public async Task<User> GetByUserSurmane(string userSurname)
         {

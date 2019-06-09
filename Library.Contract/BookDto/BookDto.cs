@@ -12,21 +12,7 @@ namespace Library.Contract.BookDto
         public int? NumberOfSites { get; set; }
         public string PublishingHouse { get; set; }
         
-        
-       
-        
-        
-        /*
-         * 
-     
-        public DateTime DateFrom { get; set; }
-        public DateTime DateTo { get; set; }
-        
-        
-        public IEnumerable<Book> RentedBook { get; set; }
-        public IEnumerable<User> BorrowingUser { get; set; }
-        
-         RentInfos */
+   
 
     }
 }

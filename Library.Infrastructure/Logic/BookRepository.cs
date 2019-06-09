@@ -22,7 +22,6 @@ namespace Library.Infrastructure.Logic
         {
          
             var books = await _libraryContext.Book.ToListAsync();
-            //books.ForEach(action: x => { _libraryContext.Entry(x).Reference(propertyExpression: y => y.RentInfos).LoadAsync();});
             return books;
         }
 
@@ -32,14 +31,6 @@ namespace Library.Infrastructure.Logic
             var book = await _libraryContext.Book
                 .Where(x => x.Id == id)
                 .SingleOrDefaultAsync();
-           /* try
-            {
-                await _libraryContext.Entry(book).Reference(propertyExpression: x => x.RentInfos).LoadAsync();
-            }
-            catch (ArgumentException e)
-            {
-                return null;
-            }*/
             
             return book;
         }
@@ -47,11 +38,6 @@ namespace Library.Infrastructure.Logic
         public async Task Add(Book book)
         {
             book.DateOfCreation = DateTime.Now;
-           /* await _libraryContext.Book
-              
-                .Include(navigationPropertyPath: x=>x.RentInfos)
-
-                .FirstAsync();*/
            book.Id = null;
             await _libraryContext.Book.AddAsync(book);
             await _libraryContext.SaveChangesAsync();
@@ -60,9 +46,7 @@ namespace Library.Infrastructure.Logic
         public async Task Update(Book entity)
         {
             var bookToUpdate = await _libraryContext.Book
-                    
-               
-                //.Include(navigationPropertyPath:x=>x.RentInfos)
+                
                 .SingleOrDefaultAsync(predicate: x => x.Id == entity.Id);
 
             if (bookToUpdate != null)
@@ -74,26 +58,6 @@ namespace Library.Infrastructure.Logic
                 bookToUpdate.YearOfPublication = entity.YearOfPublication;
                 bookToUpdate.NumberOfSites = entity.NumberOfSites;
                 bookToUpdate.DateOfUpdate = DateTime.Now;
-                //706
-                //bookToUpdate.RentInfos = entity.RentInfos;
-
-                // 706
-               /* if (entity.RentInfos != null && bookToUpdate.RentInfos != null)
-                {
-                    var rentInfosToUpdate = bookToUpdate.RentInfos.ToList();
-                    foreach (var rentInfo in rentInfosToUpdate)
-                    {
-                        foreach (var entityRentInfo in entity.RentInfos)
-                        {
-                            if (rentInfo.Id == entityRentInfo.Id)
-                            {
-                                _libraryContext.Entry(rentInfosToUpdate).CurrentValues.SetValues(entity.RentInfos);
-                            }
-                        }
-                       
-                    }
-                  
-                }*/
 
                 await _libraryContext.SaveChangesAsync();
             }
@@ -110,61 +74,27 @@ namespace Library.Infrastructure.Logic
                 await _libraryContext.SaveChangesAsync();
             }
         }
-/*my*/
 
-        public async Task<Book> GetByTitle(string title)
+
+// searching by title
+
+        public async Task<IEnumerable<Book>> GetByTitle(string title)
         {
-            var book = await _libraryContext.Book
+            var books = await _libraryContext.Book
                 .Where(x => x.Title == title)
-                .SingleOrDefaultAsync();
-            /* try
-             {
-                 await _libraryContext.Entry(book).Reference(propertyExpression: x => x.RentInfos).LoadAsync();
-             }
-             catch (ArgumentException e)
-             {
-                 return null;
-             }*/
-            
-            return book;
+                .ToListAsync();
+            return books;
         }
 
       
-
-       public async Task<Book> GetByAuthorName(string name)
+// searching by author's surname
+  
+        public async Task<IEnumerable<Book>> GetByAuthorSurname(string authorSurname)
         {
-            var book = await _libraryContext.Book
-                .Where(x => x.AuthorName==name)
-                .SingleOrDefaultAsync();
-            await _libraryContext.Entry(book).Reference(propertyExpression: x => x.RentInfos).LoadAsync();
-            return book;
-        }
-
-        public async Task<Book> GetByAuthorSurmane(string surname)
-        {
-            var book = await _libraryContext.Book
-                .Where(x => x.AuthorSurname==surname)
-                .SingleOrDefaultAsync();
-            await _libraryContext.Entry(book).Reference(propertyExpression: x => x.RentInfos).LoadAsync();
-            return book;
-        }
-
-        public async Task<Book> GetByYearOfPublication(int yearOfPublication)
-        {
-            var book = await _libraryContext.Book
-                .Where(x => x.YearOfPublication==yearOfPublication)
-                .SingleOrDefaultAsync();
-            await _libraryContext.Entry(book).Reference(propertyExpression: x => x.RentInfos).LoadAsync();
-            return book;
-        }
-
-        public async Task<Book> GetByPublishingHouse(string publishingHouse)
-        {
-            var book = await _libraryContext.Book
-                .Where(x => x.PublishingHouse==publishingHouse)
-                .SingleOrDefaultAsync();
-            await _libraryContext.Entry(book).Reference(propertyExpression: x => x.RentInfos).LoadAsync();
-            return book;
+            var books = await _libraryContext.Book
+                .Where(x => x.AuthorSurname==authorSurname)
+                .ToListAsync();
+            return books;
         }
     }
 }
