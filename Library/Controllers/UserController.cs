@@ -70,6 +70,21 @@ namespace Library.Controllers
             await _userService.Delete(id);
             return Ok(value: $"User with id = {id} deleted");
         }
+
+        [HttpGet("GetUserWithMaxBooksRead")]
+        public async Task<IActionResult> GetUserWithMaxBooksRead()
+        {
+            try
+            {
+                var user = await _userService.GetUserWithMaxBooksRead();
+                return Ok(user);
+            }
+            catch (NullReferenceException e)
+            {
+                return NotFound(value: $"Error");
+            }
+        }
+       
     }
         
     

@@ -31,14 +31,7 @@ namespace Library.Infrastructure.Logic
             var user = await _libraryContext.User
                 .Where(x => x.Id == id)
                 .SingleOrDefaultAsync();
-            /* try
-              {
-                  await _libraryContext.Entry(user).Reference(propertyExpression: x => x.RentInfos).LoadAsync();
-              }
-              catch (ArgumentException e)
-              {
-                  return null;
-              }*/
+          
 
             return user;
         }
@@ -46,9 +39,7 @@ namespace Library.Infrastructure.Logic
         public async Task Add(User entity)
         {
             entity.DateOfCreation = DateTime.Now;
-            /* await _libraryContext.User
-                 .Include(navigationPropertyPath: x=>x.RentInfos)
-                 .FirstAsync();*/
+            
             entity.Id = null;
             await _libraryContext.User.AddAsync(entity);
             await _libraryContext.SaveChangesAsync();
@@ -65,31 +56,13 @@ namespace Library.Infrastructure.Logic
                 userToUpdate.Name = entity.Name;
                 userToUpdate.Surname = entity.Surname;
                 userToUpdate.DateOfUpdate = DateTime.Now;
-                //707
-                //userToUpdate.RentInfos = entity.RentInfos;
-
-                /*if (entity.RentInfos != null && userToUpdate.RentInfos != null)
-                {
-                    var rentInfosToUpdate = userToUpdate.RentInfos.ToList();
-                    foreach (var rentInfo in rentInfosToUpdate)
-                    {
-                        foreach (var entityRentInfo in entity.RentInfos)
-                        {
-                            if (rentInfo.Id == entityRentInfo.Id)
-                            {
-                                _libraryContext.Entry(rentInfosToUpdate).CurrentValues.SetValues(entity.RentInfos);
-                            }
-                        }
-                       
-                    }
-                  
-                }*/
+           
 
                 await _libraryContext.SaveChangesAsync();
             }
         }
 
-       // public async Task<>
+       
 
         public async Task Delete(long id)
         {
@@ -109,6 +82,27 @@ namespace Library.Infrastructure.Logic
                 .SingleOrDefaultAsync();
             await _libraryContext.Entry(user).Reference(propertyExpression: x => x.RentInfos).LoadAsync();
             return user;
+        }
+        
+        public async Task<User> GetUserWithMaxBooksRead()
+        {
+            var rentInfos = _libraryContext.RentInfo;
+            
+            foreach(var line in rentInfos.GroupBy(info => info.BorrowingUser.Id)
+                .OrderByDescending(group => group.Count())
+                .Select(group => Tuple.Create(  
+                    group.Key, 
+                    group.Count())).Take(1)
+            )
+
+            {
+                var topUserId = line.Item1.GetValueOrDefault();
+                var count = line.Item2;
+
+                return await GetById(topUserId);
+            }
+
+            return null;
         }
     }
     

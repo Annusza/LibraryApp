@@ -47,5 +47,11 @@ namespace Library.Core.Services
         {
             await _iUserRepository.Delete(id);
         }
+        
+        public async Task<UserDto> GetUserWithMaxBooksRead()
+        {
+            var user = await _iUserRepository.GetUserWithMaxBooksRead();
+            return UserMapper.MapUserToUserDto(user);
+        }
     }
 }
