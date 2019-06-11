@@ -6,12 +6,10 @@ namespace Library.Infrastructure.Context
 {
     public class LibraryContext : DbContext
     {
-
         public LibraryContext(DbContextOptions options) : base(options)
         {
-            
         }
-        
+
         public DbSet<Book> Book { get; set; }
         public DbSet<User> User { get; set; }
         public DbSet<RentInfo> RentInfo { get; set; }
@@ -23,7 +21,6 @@ namespace Library.Infrastructure.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            /*spr. ON DELETE CASCADE!!!!*/
             modelBuilder.Entity<RentInfo>()
                 .HasOne(navigationExpression: x => x.RentedBook);
 
@@ -32,17 +29,9 @@ namespace Library.Infrastructure.Context
 
             modelBuilder.Entity<Book>()
                 .HasMany(navigationExpression: x => x.RentInfos);
-         //       .OnDelete(DeleteBehavior.Cascade);
 
-         modelBuilder.Entity<User>()
-             .HasMany(navigationExpression: x => x.RentInfos);
-         //      .OnDelete(DeleteBehavior.Cascade);
-
-
-
-
-
-
+            modelBuilder.Entity<User>()
+                .HasMany(navigationExpression: x => x.RentInfos);
         }
     }
 }

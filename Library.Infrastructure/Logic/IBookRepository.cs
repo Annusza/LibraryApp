@@ -7,7 +7,5 @@ namespace Library.Infrastructure.Logic
     {
         Task<IEnumerable<Book>> GetByTitle(string title);
         Task<IEnumerable<Book>> GetByAuthorSurname(string authorSurname);
-        
     }
 }
-

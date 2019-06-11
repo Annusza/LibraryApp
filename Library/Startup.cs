@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace Library
 {
@@ -22,35 +23,35 @@ namespace Library
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+
         public void ConfigureServices(IServiceCollection services)
         {
-            
             services.AddAutoMapper();
             /**/
-            
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddScoped<IBookRepository, BookRepository>();
             services.AddScoped<IBookService, BookService>();
-            
+
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserService, UserService>();
-            
+
             services.AddScoped<IRentInfoRepository, RentInfoRepository>();
             services.AddScoped<IRentInfoService, RentInfoService>();
-            
-            
+
+
             services.AddDbContext<LibraryContext>(optionsAction: options =>
                 options.UseSqlite(connectionString: "DataSource-dbo.Library.db",
-                    sqliteOptionsAction: builder => builder.MigrationsAssembly(assemblyName: "Library.Infrastructure")));
+                    sqliteOptionsAction: builder =>
+                        builder.MigrationsAssembly(assemblyName: "Library.Infrastructure")));
+
+            services.AddSwaggerGen(c => { c.SwaggerDoc(name: "v1", new Info {Title = "Library", Version = "v1"}); });
 
             // In production, the Angular files will be served from this directory
-            
-             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/dist"; });
-             
+
+            services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/dist"; });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
@@ -60,7 +61,6 @@ namespace Library
             else
             {
                 app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
@@ -75,11 +75,16 @@ namespace Library
                     template: "{controller}/{action=Index}/{id?}");
             });
 
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint(url: "/swagger/v1/swagger.json", name: "My Library V1");
+                c.RoutePrefix = string.Empty;
+            });
+
             app.UseSpa(spa =>
             {
-                // To learn more about options for serving an Angular SPA from ASP.NET Core,
-                // see https://go.microsoft.com/fwlink/?linkid=864501
-
                 spa.Options.SourcePath = "ClientApp";
 
                 if (env.IsDevelopment())

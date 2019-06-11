@@ -12,12 +12,6 @@ namespace Library.Core.Services.Mappers
         {
             return new RentInfoDto()
             {
-                //RentedBook = BookMapper.MapBookDtoToBook((BookDto) rentInfo.RentedBook);
-                /*  RentedBook =BookMapper.MapBookToBookDto(rentInfo.RentedBook),*/
-                //BorrowingUser = rentInfo.BorrowingUser
-                /* BorrowingUser = UserMapper.MapUserToUserDto(rentInfo.BorrowingUser),*/
-
-
                 DateFrom = rentInfo.DateFrom,
                 DateTo = rentInfo.DateTo,
                 Id = rentInfo.Id,
@@ -25,21 +19,6 @@ namespace Library.Core.Services.Mappers
                 RentedBookId = rentInfo.RentedBook?.Id,
                 BorrowingUserString = rentInfo.BorrowingUser?.Surname,
                 RentedBookString = rentInfo.RentedBook?.Title
-
-
-                /* 707
-                 * Name = rentInfo.BorrowingUser.Name,
-                 
-                 Surname = rentInfo.BorrowingUser.Surname,
- 
- 
-                 AuthorName = rentInfo.RentedBook.AuthorName,
-                 AuthorSurname = rentInfo.RentedBook.AuthorSurname,
-                 NumberOfSites = rentInfo.RentedBook?.NumberOfSites,
-                 PublishingHouse = rentInfo.RentedBook.PublishingHouse,
-                 Title = rentInfo.RentedBook.Title,
-                 YearOfPublication = rentInfo.RentedBook?.YearOfPublication
-                 */
             };
         }
 

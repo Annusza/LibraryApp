@@ -8,7 +8,6 @@ namespace Library.Core.Services.Mappers
     {
         public static BookDto MapBookToBookDto(Book book)
         {
-            /*-------*/
             return new BookDto()
             {
                 Title = book.Title,
@@ -18,20 +17,11 @@ namespace Library.Core.Services.Mappers
                 NumberOfSites = book.NumberOfSites,
                 YearOfPublication = book.YearOfPublication,
                 Id = book.Id
-             
-                
-        /*public DateTime DateFrom { get; set; }
-        public DateTime DateTo { get; set; }
-        
-        
-        public IEnumerable<Book> RentedBook { get; set; }
-        public IEnumerable<User> BorrowingUser { get; set; }
-                RENTiNFOS*/
             };
         }
 
         public static Book MapBookDtoToBook(BookDto book)
-        //
+            //
         {
             return new Book()
             {
@@ -42,8 +32,6 @@ namespace Library.Core.Services.Mappers
                 NumberOfSites = book.NumberOfSites.GetValueOrDefault(),
                 YearOfPublication = book.YearOfPublication.GetValueOrDefault(),
                 Id = book.Id.GetValueOrDefault()
-                
-                /*RENTINFOS*/
             };
         }
     }

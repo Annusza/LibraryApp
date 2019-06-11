@@ -119,7 +119,6 @@
         <e p="Controllers" t="Include">
           <e p="BookController.cs" t="Include" />
           <e p="RentInfoController.cs" t="Include" />
-          <e p="SampleDataController.cs" t="Include" />
           <e p="UserController.cs" t="Include" />
         </e>
         <e p="dbo.Library.db" t="Include" />
@@ -131,6 +130,7 @@
             </e>
           </e>
         </e>
+        <e p="package" t="Include" />
         <e p="Pages" t="Include">
           <e p="_ViewImports.cshtml" t="Include" />
           <e p="Error.cshtml" t="Include" />
@@ -153,7 +153,6 @@
           <e p="RentInfoDto.cs" t="Include" />
           <e p="UserDto.cs" t="Include" />
         </e>
-        <e p="Class1.cs" t="Include" />
         <e p="Library.Contract.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -165,7 +164,6 @@
       </e>
       <e p="Library.Core" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Class1.cs" t="Include" />
         <e p="Library.Core.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">

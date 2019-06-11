@@ -10,8 +10,6 @@ namespace Library.Controllers
     [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
-        
-        
         private readonly IUserService _userService;
 
         public UserController(IUserService userService)
@@ -19,7 +17,7 @@ namespace Library.Controllers
             _userService = userService;
         }
 
-        [HttpGet("GetUser/{Id}")]
+        [HttpGet("GetUser/{id}")]
         public async Task<IActionResult> GetUserById(long id)
         {
             try
@@ -84,8 +82,5 @@ namespace Library.Controllers
                 return NotFound(value: $"Error");
             }
         }
-       
     }
-        
-    
 }

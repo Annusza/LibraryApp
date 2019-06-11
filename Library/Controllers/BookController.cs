@@ -10,21 +10,16 @@ namespace Library.Controllers
     [Route("api/[controller]")]
     public class BookController : ControllerBase
     {
-
         private readonly IBookService _iBookService;
-     
-        
+
 
         public BookController(IBookService iBookService)
         {
             _iBookService = iBookService;
-            
         }
-        
-    
-        
-        /*----------------*/
-        [HttpGet("GetBook/{Id}")]
+
+
+        [HttpGet("GetBook/{id}")]
         public async Task<IActionResult> GetBookById(long id)
         {
             try
@@ -75,7 +70,7 @@ namespace Library.Controllers
             await _iBookService.Delete(id);
             return Ok(value: $"Book with id = {id} deleted");
         }
-        
+
         [HttpGet("GetByTitle/{title}")]
         public async Task<IActionResult> GetBookByTitle(string title)
         {
@@ -89,7 +84,7 @@ namespace Library.Controllers
                 return NotFound(value: $"Not found book with title = {title}");
             }
         }
-        
+
         [HttpGet("GetByAuthorSurname/{authorSurname}")]
         public async Task<IActionResult> GetBookByAuthorSurname(string authorSurname)
         {

@@ -10,8 +10,8 @@ namespace Library.Core.Services
 
 {
     public class UserService : IUserService
-    
-    
+
+
     {
         private readonly IUserRepository _iUserRepository;
 
@@ -19,6 +19,7 @@ namespace Library.Core.Services
         {
             _iUserRepository = iUserRepository;
         }
+
         public async Task<IEnumerable<UserDto>> GetAll()
         {
             var users = await _iUserRepository.GetAll();
@@ -47,7 +48,7 @@ namespace Library.Core.Services
         {
             await _iUserRepository.Delete(id);
         }
-        
+
         public async Task<UserDto> GetUserWithMaxBooksRead()
         {
             var user = await _iUserRepository.GetUserWithMaxBooksRead();

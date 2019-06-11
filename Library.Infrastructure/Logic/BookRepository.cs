@@ -16,29 +16,27 @@ namespace Library.Infrastructure.Logic
         {
             _libraryContext = libraryContext;
         }
-        
-      
+
+
         public async Task<IEnumerable<Book>> GetAll()
         {
-         
             var books = await _libraryContext.Book.ToListAsync();
             return books;
         }
 
         public async Task<Book> GetById(long id)
         {
-          
             var book = await _libraryContext.Book
                 .Where(x => x.Id == id)
                 .SingleOrDefaultAsync();
-            
+
             return book;
         }
 
         public async Task Add(Book book)
         {
             book.DateOfCreation = DateTime.Now;
-           book.Id = null;
+            book.Id = null;
             await _libraryContext.Book.AddAsync(book);
             await _libraryContext.SaveChangesAsync();
         }
@@ -46,7 +44,6 @@ namespace Library.Infrastructure.Logic
         public async Task Update(Book entity)
         {
             var bookToUpdate = await _libraryContext.Book
-                
                 .SingleOrDefaultAsync(predicate: x => x.Id == entity.Id);
 
             if (bookToUpdate != null)
@@ -61,8 +58,6 @@ namespace Library.Infrastructure.Logic
 
                 await _libraryContext.SaveChangesAsync();
             }
-            
-  
         }
 
         public async Task Delete(long id)
@@ -76,8 +71,6 @@ namespace Library.Infrastructure.Logic
         }
 
 
-// searching by title
-
         public async Task<IEnumerable<Book>> GetByTitle(string title)
         {
             var books = await _libraryContext.Book
@@ -86,16 +79,14 @@ namespace Library.Infrastructure.Logic
             return books;
         }
 
-      
-// searching by author's surname
-  
+        
+
         public async Task<IEnumerable<Book>> GetByAuthorSurname(string authorSurname)
         {
             var books = await _libraryContext.Book
-                .Where(x => x.AuthorSurname==authorSurname)
+                .Where(x => x.AuthorSurname == authorSurname)
                 .ToListAsync();
             return books;
         }
     }
 }
-

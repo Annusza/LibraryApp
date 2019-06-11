@@ -21,7 +21,6 @@ namespace Library.Infrastructure.Logic
         public async Task<IEnumerable<User>> GetAll()
         {
             var users = await _libraryContext.User.ToListAsync();
-            // users.ForEach(action: x => {_libraryContext.Entry(x).Reference(propertyExpression: y => y.RentInfos).LoadAsync();});
             return users;
         }
 
@@ -31,7 +30,7 @@ namespace Library.Infrastructure.Logic
             var user = await _libraryContext.User
                 .Where(x => x.Id == id)
                 .SingleOrDefaultAsync();
-          
+
 
             return user;
         }
@@ -39,7 +38,7 @@ namespace Library.Infrastructure.Logic
         public async Task Add(User entity)
         {
             entity.DateOfCreation = DateTime.Now;
-            
+
             entity.Id = null;
             await _libraryContext.User.AddAsync(entity);
             await _libraryContext.SaveChangesAsync();
@@ -56,13 +55,11 @@ namespace Library.Infrastructure.Logic
                 userToUpdate.Name = entity.Name;
                 userToUpdate.Surname = entity.Surname;
                 userToUpdate.DateOfUpdate = DateTime.Now;
-           
 
                 await _libraryContext.SaveChangesAsync();
             }
         }
 
-       
 
         public async Task Delete(long id)
         {
@@ -83,15 +80,15 @@ namespace Library.Infrastructure.Logic
             await _libraryContext.Entry(user).Reference(propertyExpression: x => x.RentInfos).LoadAsync();
             return user;
         }
-        
+
         public async Task<User> GetUserWithMaxBooksRead()
         {
             var rentInfos = _libraryContext.RentInfo;
-            
-            foreach(var line in rentInfos.GroupBy(info => info.BorrowingUser.Id)
+
+            foreach (var line in rentInfos.GroupBy(info => info.BorrowingUser.Id)
                 .OrderByDescending(group => group.Count())
-                .Select(group => Tuple.Create(  
-                    group.Key, 
+                .Select(group => Tuple.Create(
+                    group.Key,
                     group.Count())).Take(1)
             )
 
@@ -105,6 +102,4 @@ namespace Library.Infrastructure.Logic
             return null;
         }
     }
-    
-    
 }

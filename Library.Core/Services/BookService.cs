@@ -10,14 +10,13 @@ namespace Library.Core.Services
 {
     public class BookService : IBookService
     {
-
         private readonly IBookRepository _bookRepository;
 
         public BookService(IBookRepository bookRepository)
         {
-
             _bookRepository = bookRepository;
         }
+
         public async Task<IEnumerable<BookDto>> GetAll()
         {
             var books = await _bookRepository.GetAll();
@@ -25,7 +24,7 @@ namespace Library.Core.Services
                 .Select(BookMapper.MapBookToBookDto)
                 .ToList();
         }
-        
+
 
         public async Task<BookDto> GetById(long id)
         {
@@ -48,14 +47,11 @@ namespace Library.Core.Services
             await _bookRepository.Delete(id);
         }
 
-// my
 
         public async Task<IEnumerable<BookDto>> GetByTitle(string dto)
         {
             var books = await _bookRepository.GetByTitle(dto);
             return books.Select(BookMapper.MapBookToBookDto).ToList();
-            
-         
         }
 
         public async Task<IEnumerable<BookDto>> GetByAuthorSurname(string dtoAuthorSurname)

@@ -10,7 +10,6 @@ namespace Library.Controllers
     [Route("api/[controller]")]
     public class RentInfoController : ControllerBase
     {
-        
         private readonly IRentInfoService _rentInfoService;
 
         public RentInfoController(IRentInfoService rentInfoService)
@@ -18,7 +17,7 @@ namespace Library.Controllers
             _rentInfoService = rentInfoService;
         }
 
-        [HttpGet("GetRentInfo/{Id}")]
+        [HttpGet("GetRentInfo/{id}")]
         public async Task<IActionResult> GetRentInfoById(long id)
         {
             try
@@ -40,7 +39,7 @@ namespace Library.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateRentInfo ([FromBody] RentInfoDto rentInfoDto)
+        public async Task<IActionResult> CreateRentInfo([FromBody] RentInfoDto rentInfoDto)
         {
             if (rentInfoDto == null)
             {

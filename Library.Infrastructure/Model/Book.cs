@@ -11,12 +11,7 @@ namespace Library.Infrastructure
         public int YearOfPublication { get; set; }
         public int NumberOfSites { get; set; }
         public string PublishingHouse { get; set; }
-  
 
         public IEnumerable<RentInfo> RentInfos { get; set; }
-        
-        
-        
-        
     }
 }

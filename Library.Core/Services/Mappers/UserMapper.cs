@@ -13,7 +13,6 @@ namespace Library.Core.Services.Mappers
                 Name = user.Name,
                 Surname = user.Surname,
                 Id = user.Id
-                
             };
         }
 
@@ -24,7 +23,6 @@ namespace Library.Core.Services.Mappers
                 Name = user.Name,
                 Surname = user.Surname,
                 Id = user.Id.GetValueOrDefault()
-                
             };
         }
     }

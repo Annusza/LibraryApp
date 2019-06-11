@@ -1,0 +1,11 @@
+U¾ycie: dotnet add [opcje] <PROJEKT> [polecenie]
+
+Argumenty:
+  <PROJEKT>   Plik projektu, na kt¢rym ma zosta† wykonana operacja. Je˜li nie okre˜lono pliku, polecenie przeszuka bie¾¥cy katalog pod jego k¥tem.
+
+Opcje:
+  -h, --help   Poka¾ pomoc wiersza polecenia.
+
+Polecenia:
+  package <NAZWA_PAKIETU>        Dodaj odwoˆanie do pakietu NuGet do projektu.
+  reference <—CIE½KA_PROJEKTU>   Dodaj odwoˆanie mi©dzy projektami do projektu.
